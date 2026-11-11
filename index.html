@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>後寮國小 English</title>
+  <meta name="description" content="後寮國小英語學習網 - 打造生動活潑的雙語校園環境，提供豐富的線上英語學習資源、每日一句與自主學習指引。">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables & Theme Setup */
+    :root {
+      --primary: #2563eb;
+      --primary-light: #60a5fa;
+      --primary-dark: #1d4ed8;
+      --secondary: #0ea5e9;
+      --accent-coral: #f43f5e;
+      --accent-yellow: #f59e0b;
+      --accent-green: #10b981;
+      --accent-purple: #8b5cf6;
+      --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fdf4ff 100%);
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --card-border: rgba(255, 255, 255, 0.8);
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 15px -3px rgba(37, 99, 235, 0.08), 0 4px 6px -4px rgba(37, 99, 235, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(37, 99, 235, 0.12), 0 8px 10px -6px rgba(37, 99, 235, 0.08);
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Decorative Floating Background Shapes */
+    .bg-shape {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(70px);
+      z-index: -1;
+      opacity: 0.45;
+      pointer-events: none;
+      animation: floatSlow 20s infinite alternate ease-in-out;
+    }
+    .bg-shape-1 {
+      top: -10%;
+      left: -5%;
+      width: 480px;
+      height: 480px;
+      background: #93c5fd;
+    }
+    .bg-shape-2 {
+      top: 40%;
+      right: -8%;
+      width: 520px;
+      height: 520px;
+      background: #fbcfe8;
+      animation-delay: -7s;
+    }
+    .bg-shape-3 {
+      bottom: -10%;
+      left: 15%;
+      width: 420px;
+      height: 420px;
+      background: #fde68a;
+      animation-delay: -12s;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(40px, 30px) rotate(15deg); }
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      margin: 16px 24px 0;
+    }
+    .nav-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-full);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+    }
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      color: white;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    }
+    .brand-text span {
+      color: var(--accent-coral);
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-links a:hover {
+      background: #eff6ff;
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .nav-btn {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white !important;
+      padding: 8px 18px !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    .nav-btn:hover {
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+      transform: translateY(-2px) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 48px 0 60px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(59, 130, 246, 0.1);
+    }
+    .hero-badge span {
+      background: var(--accent-coral);
+      color: white;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    .hero-title {
+      font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 18px;
+      color: #0f172a;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(120deg, #2563eb, #06b6d4, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .btn {
+      padding: 13px 26px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: white;
+      box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.5);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text-main);
+      border: 1.5px solid #cbd5e1;
+    }
+    .btn-outline:hover {
+      background: #ffffff;
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* QR Code Hero Feature Card */
+    .qr-card-container {
+      position: relative;
+    }
+    .qr-card-container::before {
+      content: "";
+      position: absolute;
+      inset: -12px;
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #f472b6);
+      border-radius: 32px;
+      filter: blur(20px);
+      opacity: 0.55;
+      z-index: 0;
+      animation: pulseGlow 6s infinite alternate ease-in-out;
+    }
+    @keyframes pulseGlow {
+      0% { opacity: 0.4; filter: blur(16px); }
+      100% { opacity: 0.7; filter: blur(24px); }
+    }
+    .qr-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.95);
+      border-radius: 28px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+    }
+    .qr-card:hover {
+      transform: translateY(-4px);
+    }
+    .qr-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 18px;
+    }
+    .qr-image-wrapper {
+      position: relative;
+      display: inline-block;
+      padding: 14px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 20px;
+    }
+    .qr-image {
+      display: block;
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .qr-image-wrapper:hover .qr-image {
+      transform: scale(1.03);
+    }
+    .qr-corner-tag {
+      position: absolute;
+      bottom: -8px;
+      right: -8px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    }
+    .qr-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .qr-description {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .qr-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 14px;
+    }
+    .qr-feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .qr-feature-icon {
+      font-size: 1.1rem;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 56px 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #eff6ff;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* Interactive Daily English & Speech Section */
+    .daily-box {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    .daily-box::before {
+      content: "“";
+      position: absolute;
+      top: -20px;
+      right: 24px;
+      font-size: 140px;
+      color: rgba(59, 130, 246, 0.08);
+      font-family: Georgia, serif;
+      pointer-events: none;
+    }
+    .daily-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .daily-badge {
+      background: var(--accent-yellow);
+      color: #78350f;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .daily-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .daily-sentence {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .sound-btn {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      transition: var(--transition);
+    }
+    .sound-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    }
+    .sound-btn:active {
+      transform: scale(0.95);
+    }
+    .daily-translation {
+      font-size: 1.15rem;
+      color: #475569;
+      font-weight: 500;
+    }
+    .daily-tip {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      width: fit-content;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: #93c5fd;
+    }
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+    .icon-blue { background: #dbeafe; color: #2563eb; }
+    .icon-green { background: #d1fae5; color: #059669; }
+    .icon-purple { background: #ede9fe; color: #7c3aed; }
+    .icon-coral { background: #ffe4e6; color: #e11d48; }
+    .icon-amber { background: #fef3c7; color: #d97706; }
+    .icon-cyan { background: #cffafe; color: #0891b2; }
+
+    .card-title {
+      font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .card-link {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+    .card-link:hover {
+      gap: 10px;
+      color: var(--primary-dark);
+    }
+
+    /* Vocabulary Interactive Flashcard Showcase */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .vocab-item {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+    .vocab-item:hover {
+      transform: scale(1.03);
+      border-color: var(--primary-light);
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.1);
+    }
+    .vocab-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+    .vocab-word {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .vocab-phonetic {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    .vocab-meaning {
+      font-size: 0.95rem;
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .vocab-play {
+      margin-top: 8px;
+      background: #eff6ff;
+      color: #2563eb;
+      border-radius: var(--radius-full);
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Mini Quiz Section */
+    .quiz-container {
+      background: white;
+      border: 2px solid #e0e7ff;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .quiz-question-box {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .quiz-tag {
+      display: inline-block;
+      background: #fdf2f8;
+      color: #db2777;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+    }
+    .quiz-question {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .quiz-opt-btn {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e293b;
+      transition: var(--transition);
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .quiz-opt-btn:hover {
+      background: #eff6ff;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .quiz-feedback {
+      display: none;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      font-weight: 700;
+      animation: fadeIn 0.3s ease;
+    }
+    .feedback-correct {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .feedback-wrong {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    /* Activities Section */
+    .activity-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .activity-card {
+      background: white;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+      transition: var(--transition);
+    }
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .activity-img-banner {
+      height: 140px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 3rem;
+    }
+    .banner-coral {
+      background: linear-gradient(135deg, #f43f5e, #fb923c);
+    }
+    .banner-emerald {
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+    }
+    .activity-body {
+      padding: 24px;
+    }
+    .activity-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .activity-tag {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .activity-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+    .activity-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 60px 0 30px;
+      margin-top: 80px;
+      border-top: 1px solid #1e293b;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      font-family: 'Fredoka', 'Noto Sans TC', sans-serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-brand p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 440px;
+    }
+    .footer-links h4 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover {
+      color: #38bdf8;
+    }
+    .footer-bottom {
+      border-top: 1px solid #1e293b;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Floating Scan Button on Mobile */
+    .mobile-float-qr {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99;
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
+      color: white;
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+      display: none;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      animation: bounceFloat 3s infinite ease-in-out;
+    }
+    @keyframes bounceFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 968px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-subtitle {
+        margin: 0 auto 32px;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .qr-card-container {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-float-qr {
+        display: flex;
+      }
+      .quiz-options {
+        grid-template-columns: 1fr;
+      }
+      .daily-sentence {
+        font-size: 1.4rem;
+      }
+      .daily-box {
+        padding: 24px 20px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Background Blobs -->
+  <div class="bg-shape bg-shape-1"></div>
+  <div class="bg-shape bg-shape-2"></div>
+  <div class="bg-shape bg-shape-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <nav class="nav-wrapper">
+      <a href="#" class="brand">
+        <div class="brand-icon">🏫</div>
+        <div class="brand-text">後寮國小 <span>English</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">首頁</a></li>
+        <li><a href="#daily">每日一句</a></li>
+        <li><a href="#learning">學習專區</a></li>
+        <li><a href="#quiz">單字小挑戰</a></li>
+        <li><a href="#activities">校園活動</a></li>
+        <li><a href="#qrcode-section" class="nav-btn">📱 掃描 QR Code</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Left Content -->
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span>NEW</span> 雙語校園 • 快樂學習
+            </div>
+            <h1 class="hero-title">
+              後寮國小 <br>
+              <span class="highlight">English Hub</span> 英語天地
+            </h1>
+            <p class="hero-subtitle">
+              歡迎來到後寮國小英語學習網！開啟孩子探索世界的鑰匙，打造沉浸式、趣味化的英語學習環境，讓每一位後寮學子自信開口說英語！
+            </p>
+            <div class="hero-actions">
+              <a href="#learning" class="btn btn-primary">
+                🚀 探索學習資源
+              </a>
+              <a href="#qrcode-section" class="btn btn-outline">
+                📷 掃碼隨身學
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Right: Featured QR Code Card -->
+          <div class="qr-card-container" id="qrcode-section">
+            <div class="qr-card">
+              <div class="qr-badge-top">
+                ✨ 行動學習專區
+              </div>
+              
+              <div class="qr-image-wrapper">
+                <img src="qrcode.png" alt="後寮國小 English QR Code" class="qr-image" id="schoolQr">
+                <div class="qr-corner-tag">Scan Me!</div>
+              </div>
+
+              <h2 class="qr-title">後寮國小 English</h2>
+              <p class="qr-description">拿起手機掃描上方 QR Code，隨時隨地輕鬆探索英語學習資源！</p>
+
+              <div class="qr-features">
+                <div class="qr-feature-item">
+                  <div class="qr-feature-icon">📱</div>
+                  <div>手機即掃即讀</div>
+                </div>
+                <div class="qr-feature-item">
+                  <div class="qr-feature-icon">🎧</div>
+                  <div>真人美語發音</div>
+                </div>
+                <div class="qr-feature-item">
+                  <div class="qr-feature-icon">⭐</div>
+                  <div>酷英平臺精選</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily English Corner (with Real Speech Synthesis) -->
+    <section class="section" id="daily">
+      <div class="container">
+        
+        <div class="daily-box">
+          <div class="daily-header">
+            <span class="daily-badge">🌟 Daily English 每日一句</span>
+            <span style="font-size: 0.9rem; color: #64748b;">點擊喇叭即可聆聽正確發音 🔊</span>
+          </div>
+          
+          <div class="daily-content">
+            <div class="daily-sentence">
+              <span id="currentSentence">"Practice makes perfect!"</span>
+              <button class="sound-btn" title="播放發音" onclick="speakText('Practice makes perfect!')">
+                🔊
+              </button>
+            </div>
+            <div class="daily-translation" id="currentTranslation">
+              熟能生巧！每天練習一點點，英語就能進步大一步。
+            </div>
+            <div class="daily-tip">
+              💡 <b>小叮嚀：</b> 遇到外籍老師或同學，不妨大聲說一句 "Good morning, teacher!" 喔！
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Title for Vocabulary -->
+        <div class="section-header">
+          <span class="section-tag">Interactive Flashcards</span>
+          <h2 class="section-title">生活常用單字卡片</h2>
+          <p class="section-desc">點選任意單字卡片，跟著外師發音一起朗讀！</p>
+        </div>
+
+        <!-- Vocab Cards Grid -->
+        <div class="vocab-grid">
+          <div class="vocab-item" onclick="speakText('Apple')">
+            <div class="vocab-emoji">🍎</div>
+            <div class="vocab-word">Apple</div>
+            <div class="vocab-phonetic">/ˈæp.əl/</div>
+            <div class="vocab-meaning">蘋果</div>
+            <div class="vocab-play">🔊 聽發音</div>
+          </div>
+
+          <div class="vocab-item" onclick="speakText('Sunshine')">
+            <div class="vocab-emoji">☀️</div>
+            <div class="vocab-word">Sunshine</div>
+            <div class="vocab-phonetic">/ˈsʌn.ʃaɪn/</div>
+            <div class="vocab-meaning">陽光</div>
+            <div class="vocab-play">🔊 聽發音</div>
+          </div>
+
+          <div class="vocab-item" onclick="speakText('School')">
+            <div class="vocab-emoji">🏫</div>
+            <div class="vocab-word">School</div>
+            <div class="vocab-phonetic">/skuːl/</div>
+            <div class="vocab-meaning">學校</div>
+            <div class="vocab-play">🔊 聽發音</div>
+          </div>
+
+          <div class="vocab-item" onclick="speakText('Book')">
+            <div class="vocab-emoji">📚</div>
+            <div class="vocab-word">Book</div>
+            <div class="vocab-phonetic">/bʊk/</div>
+            <div class="vocab-meaning">書籍</div>
+            <div class="vocab-play">🔊 聽發音</div>
+          </div>
+
+          <div class="vocab-item" onclick="speakText('Smile')">
+            <div class="vocab-emoji">😊</div>
+            <div class="vocab-word">Smile</div>
+            <div class="vocab-phonetic">/smaɪl/</div>
+            <div class="vocab-meaning">微笑</div>
+            <div class="vocab-play">🔊 聽發音</div>
+          </div>
+
+          <div class="vocab-item" onclick="speakText('Friend')">
+            <div class="vocab-emoji">🤝</div>
+            <div class="vocab-word">Friend</div>
+            <div class="vocab-phonetic">/frend/</div>
+            <div class="vocab-meaning">朋友</div>
+            <div class="vocab-play">🔊 聽發音</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Learning Resources Hub -->
+    <section class="section" id="learning">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Learning Hub</span>
+          <h2 class="section-title">多元英語學習專區</h2>
+          <p class="section-desc">結合數位資源與趣味教材，滿足國小各年級學童的英語學習需求</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="card-icon icon-blue">🔤</div>
+            <h3 class="card-title">自然發音 Phonics</h3>
+            <p class="card-desc">掌握 26 個字母發音規律與常見字母組合音，看到單字就會讀，聽到發音就會拼。</p>
+            <a href="https://www.starfall.com/h/abcs/" target="_blank" rel="noopener noreferrer" class="card-link">
+              前往學習 &rarr;
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-icon icon-cyan">💻</div>
+            <h3 class="card-title">教育部 Cool English</h3>
+            <p class="card-desc">官方英語線上學習平臺，包含聽力、口說、閱讀、寫作遊戲化自主學習課程與競賽。</p>
+            <a href="https://www.coolenglish.edu.tw/" target="_blank" rel="noopener noreferrer" class="card-link">
+              進入酷英平臺 &rarr;
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-icon icon-purple">📖</div>
+            <h3 class="card-title">英語繪本有聲書</h3>
+            <p class="card-desc">精選適合小學生的世界經典英文繪本故事，搭配生動插畫與優美配音，培養閱讀興趣。</p>
+            <a href="https://www.oxfordowl.co.uk/" target="_blank" rel="noopener noreferrer" class="card-link">
+              翻開繪本 &rarr;
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card">
+            <div class="card-icon icon-coral">🎵</div>
+            <h3 class="card-title">歡樂童謠與律動</h3>
+            <p class="card-desc">Super Simple Songs 經典兒歌律動，透過節奏與歌曲自然記憶生活英語字彙。</p>
+            <a href="https://supersimple.com/super-simple-songs/" target="_blank" rel="noopener noreferrer" class="card-link">
+              聆聽歌曲 &rarr;
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card">
+            <div class="card-icon icon-green">💬</div>
+            <h3 class="card-title">生活校園對話</h3>
+            <p class="card-desc">打招呼、借文具、課堂互動等國小校園實用情境會話，鼓勵孩子勇敢大膽開口。</p>
+            <a href="#daily" class="card-link">
+              練習會話 &rarr;
+            </a>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card">
+            <div class="card-icon icon-amber">🏆</div>
+            <h3 class="card-title">自主挑戰與檢定</h3>
+            <p class="card-desc">學童英檢自我評量、字彙小達人闖關練習，每週記錄學習里程碑。</p>
+            <a href="#quiz" class="card-link">
+              參與挑戰 &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mini Quiz Section -->
+    <section class="section" id="quiz">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Interactive Challenge</span>
+          <h2 class="section-title">今日單字小挑戰</h2>
+          <p class="section-desc">動動腦筋，選出正確的英文單字答案！</p>
+        </div>
+
+        <div class="quiz-container">
+          <div class="quiz-question-box">
+            <span class="quiz-tag">Question 1</span>
+            <div class="quiz-question" id="quizQuestion">
+              請問「教室」的英文是什麼？
+            </div>
+          </div>
+
+          <div class="quiz-options">
+            <button class="quiz-opt-btn" onclick="checkAnswer(false, this)">
+              <span>A. Library</span>
+              <span>📚</span>
+            </button>
+            <button class="quiz-opt-btn" onclick="checkAnswer(true, this)">
+              <span>B. Classroom</span>
+              <span>🏫</span>
+            </button>
+            <button class="quiz-opt-btn" onclick="checkAnswer(false, this)">
+              <span>C. Playground</span>
+              <span>⚽</span>
+            </button>
+            <button class="quiz-opt-btn" onclick="checkAnswer(false, this)">
+              <span>D. Hospital</span>
+              <span>🏥</span>
+            </button>
+          </div>
+
+          <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Activities & Campus English Section -->
+    <section class="section" id="activities">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Campus Life</span>
+          <h2 class="section-title">後寮校園英語活動</h2>
+          <p class="section-desc">寓教於樂的校園英語日與雙語沉浸活動剪影</p>
+        </div>
+
+        <div class="activity-row">
+          
+          <div class="activity-card">
+            <div class="activity-img-banner">
+              🎉
+            </div>
+            <div class="activity-body">
+              <div class="activity-meta">
+                <span class="activity-tag">每週三</span>
+                <span>全校活動</span>
+              </div>
+              <h3 class="activity-title">後寮英語日 English Day</h3>
+              <p class="activity-desc">每逢週三早自習與下課時間，全校師生以簡易英語親切問候，廣播播放精選英語童謠與名句。</p>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-img-banner banner-coral">
+              🎭
+            </div>
+            <div class="activity-body">
+              <div class="activity-meta">
+                <span class="activity-tag">期末亮點</span>
+                <span>成果展演</span>
+              </div>
+              <h3 class="activity-title">英語讀者劇場 (Reader's Theater)</h3>
+              <p class="activity-desc">孩子們化身童話角色，結合肢體語言與生動音調，在校內舞台自信展現英語朗讀與表演實力。</p>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-img-banner banner-emerald">
+              🌍
+            </div>
+            <div class="activity-body">
+              <div class="activity-meta">
+                <span class="activity-tag">外師交流</span>
+                <span>跨文化學習</span>
+              </div>
+              <h3 class="activity-title">外籍英語教師主題文化營</h3>
+              <p class="activity-desc">外師帶領學生體驗異國節慶手作、國際烹飪與桌遊互動，拓寬孩子們的全球視野。</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Floating QR Shortcut Button -->
+  <a href="#qrcode-section" class="mobile-float-qr">
+    <span>📱</span>
+    <span>查看 QR Code</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <h3>🏫 後寮國小 English</h3>
+          <p>
+            後寮國小英語教學團隊致力於營造友善、有趣且充滿探索樂趣的雙語學習環境。激發孩子的學習熱情，讓英語自然融入校園日常。
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>快速導覽</h4>
+          <ul>
+            <li><a href="#home">回到頂部</a></li>
+            <li><a href="#daily">每日一句與發音</a></li>
+            <li><a href="#learning">精選數位學習資源</a></li>
+            <li><a href="#qrcode-section">首頁 QR Code 專區</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>推薦連結</h4>
+          <ul>
+            <li><a href="https://www.coolenglish.edu.tw/" target="_blank" rel="noopener">Cool English 酷英網</a></li>
+            <li><a href="https://www.starfall.com/" target="_blank" rel="noopener">Starfall Phonics</a></li>
+            <li><a href="https://supersimple.com/" target="_blank" rel="noopener">Super Simple Songs</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 後寮國小 Hou-Liao Elementary School. All rights reserved.</div>
+        <div>打造優質雙語校園 • 快樂學習 快樂成長</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Text-To-Speech (語音發音朗讀功能)
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        // Cancel previous speech if ongoing
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9; // Slightly slower for elementary school learners
+        utterance.pitch = 1.05;
+        
+        // Find an English voice if available
+        const voices = window.speechSynthesis.getVoices();
+        const enVoice = voices.find(v => v.lang.startsWith('en'));
+        if (enVoice) {
+          utterance.voice = enVoice;
+        }
+
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('您的瀏覽器不支援語音播放功能。');
+      }
+    }
+
+    // Mini Quiz Checker
+    function checkAnswer(isCorrect, buttonElement) {
+      const feedback = document.getElementById('quizFeedback');
+      const allButtons = document.querySelectorAll('.quiz-opt-btn');
+
+      // Reset states
+      allButtons.forEach(btn => {
+        btn.style.borderColor = '#e2e8f0';
+        btn.style.background = '#f8fafc';
+      });
+
+      feedback.style.display = 'block';
+
+      if (isCorrect) {
+        buttonElement.style.borderColor = '#10b981';
+        buttonElement.style.background = '#ecfdf5';
+        feedback.className = 'quiz-feedback feedback-correct';
+        feedback.innerHTML = '🎉 太棒了！答對了！Classroom 就是教室的意思！Keep up the great work!';
+        speakText('Excellent! Classroom!');
+      } else {
+        buttonElement.style.borderColor = '#ef4444';
+        buttonElement.style.background = '#fef2f2';
+        feedback.className = 'quiz-feedback feedback-wrong';
+        feedback.innerHTML = '💡 差一點點喔！再試一次看看～加油！';
+      }
+    }
+
+    // Make sure voice list is loaded on Chrome/Safari
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+  </script>
+</body>
+</html>
